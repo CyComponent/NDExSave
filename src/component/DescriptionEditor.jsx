@@ -18,7 +18,7 @@ export default class PropertiesEditor extends React.Component {
 
   render() {
     const areaStyle = {
-      height: '71%',
+      height: '56%',
       width: '100%',
       resize: 'none',
       border: 0,

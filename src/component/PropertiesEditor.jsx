@@ -60,7 +60,7 @@ export default class PropertiesEditor extends React.Component {
       width: '80%'
     }
     const areaStyle = {
-      height: '30%',
+      height: '15%',
       width: '100%',
       resize: 'none',
       border: 0,
