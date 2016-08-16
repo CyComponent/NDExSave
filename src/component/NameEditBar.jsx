@@ -27,9 +27,11 @@ export default class SaveBar extends React.Component {
     return (
       <Toolbar>
         <ToolbarGroup firstChild={true}>
+          <h3 style={{ marginLeft: '20px', marginTop: '12px' }}>Network Name:</h3>
           <TextField
-            style={{ marginLeft: '20px', width: '200px' }}
+            style={{ marginLeft: '20px', width: '400px' }}
             hintText="Network Name"
+            underlineShow={true}
             value={this.props.networkName}
             onChange={this.handleChange.bind(this)}
           />
