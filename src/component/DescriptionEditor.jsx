@@ -18,7 +18,7 @@ export default class PropertiesEditor extends React.Component {
 
   render() {
     const areaStyle = {
-      height: '91%',
+      height: '71%',
       width: '100%',
       resize: 'none',
       border: 0,
@@ -35,7 +35,7 @@ export default class PropertiesEditor extends React.Component {
           </Toolbar>
           <textarea
             style={areaStyle}
-            placeholder="Enter ..."
+            placeholder="Enter Description..."
             value={this.props.description}
             onChange={this.handleChange.bind(this)}
           />

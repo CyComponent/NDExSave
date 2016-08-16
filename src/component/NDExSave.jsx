@@ -14,6 +14,7 @@ import '../style/save.scss'
 export default class NDExSave extends React.Component {
 
   static defaultProps = {
+    UUID: "New Network",
     theme: {},
     networkName: "",
     private: false,
@@ -61,7 +62,10 @@ export default class NDExSave extends React.Component {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <div>
-          <SaveBar save={this.save.bind(this)}/>
+          <SaveBar
+            save={this.save.bind(this)}
+            UUID={this.props.UUID}
+          />
           <NameEditBar
             networkName={this.state.networkName}
             private={this.state.private}

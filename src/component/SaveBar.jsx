@@ -22,10 +22,12 @@ export default class SaveBar extends React.Component {
   render() {
     return (
       <AppBar
-        title={<span>Title</span>}
+        title={<span>NDExSave UUID: {this.props.UUID}</span>}
+        iconElementLeft={<div/>}
         iconElementRight={
           <RaisedButton
-           label="Save"
+           label={<h1 style={{ marginTop: '-10px' }}>Save</h1>}
+           style={{ width: '400px', height: '45px' }}
            onClick={this.handleSave.bind(this)}
            secondary={true}
           />

@@ -30,7 +30,7 @@ export default class SaveBar extends React.Component {
           <TextField
             style={{ marginLeft: '20px', width: '200px' }}
             hintText="Network Name"
-            value={this.props.description}
+            value={this.props.networkName}
             onChange={this.handleChange.bind(this)}
           />
         </ToolbarGroup>
