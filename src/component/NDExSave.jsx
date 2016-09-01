@@ -17,6 +17,7 @@ export default class NDExSave extends React.Component {
     UUID: "New Network",
     theme: {},
     networkName: "",
+    overwrite: true,
     private: false,
     toggleDisabled: false,
     author: "",
@@ -34,6 +35,7 @@ export default class NDExSave extends React.Component {
     super(props)
     this.state = {
       networkName: this.props.networkName,
+      overwrite: this.props.overwrite,
       private: this.props.private,
       author: this.props.author,
       organism: this.props.organism,
@@ -68,6 +70,7 @@ export default class NDExSave extends React.Component {
           />
           <NameEditBar
             networkName={this.state.networkName}
+            overwrite={this.props.overwrite}
             private={this.state.private}
             toggleDisabled={this.props.toggleDisabled}
             updateField={this.updateField.bind(this)}
