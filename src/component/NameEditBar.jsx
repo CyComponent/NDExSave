@@ -54,7 +54,7 @@ export default class SaveBar extends React.Component {
             style={{ paddingTop: '16px' }}
             disabled={this.props.toggleDisabled}
             toggled={this.props.private}
-            onToggle={this.handlPrivateToggle.bind(this)}
+            onToggle={this.handlePrivateToggle.bind(this)}
            />
         </ToolbarGroup>
       </Toolbar>
