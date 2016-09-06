@@ -46,7 +46,8 @@ export default class SaveBar extends React.Component {
           <Toggle
             label="Overwrite"
             style={{ paddingTop: '16px' }}
-            toggled={this.props.ovewrite}
+            disabled={this.props.overwriteDisabled}
+            toggled={this.props.overwrite}
             onToggle={this.handleOverwriteToggle.bind(this)}
            />
         </ToolbarGroup>
@@ -54,7 +55,7 @@ export default class SaveBar extends React.Component {
           <Toggle
             label="Save as Private"
             style={{ paddingTop: '16px' }}
-            disabled={this.props.toggleDisabled}
+            disabled={this.props.privateDisabled}
             toggled={this.props.private}
             onToggle={this.handlePrivateToggle.bind(this)}
            />
