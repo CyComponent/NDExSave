@@ -1,15 +1,7 @@
 import React from 'react'
-
 import AppBar from 'material-ui/AppBar'
-import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
 
-import Toggle from 'material-ui/Toggle'
-import DropDownMenu from 'material-ui/DropDownMenu'
-
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar'
 
 export default class SaveBar extends React.Component {
 
@@ -22,17 +14,19 @@ export default class SaveBar extends React.Component {
   render() {
     return (
       <AppBar
-        title={<span>NDExSave UUID: {this.props.UUID}</span>}
+        title={"NDEx ID: " + this.props.UUID}
         iconElementLeft={<div/>}
         iconElementRight={
-          <RaisedButton
-           label={<h1 style={{ marginTop: '-10px' }}>Save</h1>}
-           style={{ width: '400px', height: '45px' }}
-           onClick={this.handleSave.bind(this)}
-           secondary={true}
+          <FlatButton
+            label='Save'
+            backgroundColor="darkorange"
+            hoverColor="orange"
+            style={{width: '12em'}}
+            onClick={this.handleSave.bind(this)}
           />
         }
-      />
+      >
+      </AppBar>
     )
   }
 

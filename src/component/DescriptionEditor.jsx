@@ -17,30 +17,44 @@ export default class PropertiesEditor extends React.Component {
   }
 
   render() {
-    const areaStyle = {
-      height: '56%',
-      width: '100%',
-      resize: 'none',
-      border: 0,
-      fontSize: 20,
-      overflowY: 'auto'
+    const container = {
+      width: '50%',
+      height: '100%',
+      margin: '0',
+      padding: '1em'
     }
+
+    const titleStyle={
+      paddingTop: '0.3em',
+      paddingBottom: '0.3em',
+      paddingLeft: '0.3em',
+      margin: '0',
+      fontSize: 12,
+      color: '#777777',
+    }
+
+    const areaStyle = {
+      padding: '0.5em',
+      width: '100%',
+      height: '100%',
+      resize: 'none',
+      border: '1px solid #dddddd',
+      fontSize: 14,
+      overflowY: 'auto',
+    }
+
+
     return (
-      <div style={{ width: '50%', float: 'right' }}>
-        <Paper style={{ marginLeft: '30px', marginTop: '20px', width: '91%' }} zDepth={2}>
-          <Toolbar>
-            <ToolbarGroup firstChild={true}>
-              <ToolbarTitle text="Description"/>
-            </ToolbarGroup>
-          </Toolbar>
+      <div style={container}>
+
+          <div style={titleStyle}>Description</div>
+
           <textarea
             style={areaStyle}
             placeholder="Enter Description..."
             value={this.props.description}
             onChange={this.handleChange.bind(this)}
           />
-        </Paper>
-        <br/>
       </div>
     )
   }

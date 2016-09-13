@@ -30,36 +30,52 @@ export default class SaveBar extends React.Component {
   }
 
   render() {
+
+    const containerLeft = {
+      display: 'flex',
+      flexFlow: 'flex-start',
+      alignItems: 'center'
+    }
+
+    const container = {
+      display: 'flex',
+      flexFlow: 'flex-end',
+      alignItems: 'center'
+    }
+
     return (
       <Toolbar>
-        <ToolbarGroup firstChild={true}>
-          <h3 style={{ marginLeft: '20px', marginTop: '12px' }}>Network Name:</h3>
+        <ToolbarGroup firstChild={true} style={containerLeft}>
+          <h3 style={{ marginLeft: '1em' }}>Collection:</h3>
           <TextField
-            style={{ marginLeft: '20px', width: '400px' }}
-            hintText="Network Name"
+            style={{ marginLeft: '1em'}}
+            hintText="Collection"
             underlineShow={true}
             value={this.props.networkName}
             onChange={this.handleChange.bind(this)}
           />
         </ToolbarGroup>
-        <ToolbarGroup>
-          <Toggle
-            label="Overwrite"
-            style={{ paddingTop: '16px' }}
-            disabled={this.props.overwriteDisabled}
-            toggled={this.props.overwrite}
-            onToggle={this.handleOverwriteToggle.bind(this)}
-           />
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <Toggle
-            label="Save as Private"
-            style={{ paddingTop: '16px' }}
-            disabled={this.props.privateDisabled}
-            toggled={this.props.private}
-            onToggle={this.handlePrivateToggle.bind(this)}
-           />
-        </ToolbarGroup>
+
+        <div style={container}>
+          <ToolbarGroup>
+            <Toggle
+              label="Overwrite"
+              labelStyle={{marginLeft: '1em'}}
+              disabled={this.props.overwriteDisabled}
+              toggled={this.props.overwrite}
+              onToggle={this.handleOverwriteToggle.bind(this)}
+            />
+          </ToolbarGroup>
+          <ToolbarGroup>
+            <Toggle
+              label="Save as Private"
+              labelStyle={{marginLeft: '1em'}}
+              disabled={this.props.privateDisabled}
+              toggled={this.props.private}
+              onToggle={this.handlePrivateToggle.bind(this)}
+            />
+          </ToolbarGroup>
+        </div>
       </Toolbar>
     )
   }

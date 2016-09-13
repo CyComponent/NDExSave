@@ -55,20 +55,47 @@ export default class PropertiesEditor extends React.Component {
   }
 
   render() {
+    const container = {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '50%',
+      height: '100%',
+      margin: '0',
+      padding: '1em'
+    }
+
     const fieldStyle={
-      paddingLeft: '30px',
-      width: '80%'
+      padding: '0',
+      marginTop: '-0.5em',
+      width: '100%'
     }
-    const areaStyle = {
-      height: '15%',
+
+    const refStyle={
       width: '100%',
-      resize: 'none',
-      border: 0,
-      fontSize: 20,
-      overflowY: 'auto'
+      height: '120px',
     }
+
+    const titleStyle={
+      paddingTop: '0.3em',
+      paddingBottom: '0.3em',
+      paddingLeft: '0.3em',
+      margin: '0',
+      fontSize: 12,
+      color: '#777777',
+    }
+
+    const areaStyle = {
+      padding: '0.5em',
+      width: '100%',
+      height: '100%',
+      resize: 'none',
+      border: '1px solid #dddddd',
+      fontSize: 14,
+      overflowY: 'auto',
+    }
+
     return (
-      <div style={{ width: '50%', float: 'left' }}>
+      <div style={container}>
         <TextField
           style={fieldStyle}
           floatingLabelText="Author"
@@ -76,7 +103,6 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.author}
           onChange={this.handleAuthor.bind(this)}
         />
-        <br/>
         <TextField
           style={fieldStyle}
           floatingLabelText="Organism"
@@ -84,7 +110,6 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.organism}
           onChange={this.handleOrganism.bind(this)}
         />
-        <br/>
         <TextField
           style={fieldStyle}
           floatingLabelText="Disease"
@@ -92,7 +117,6 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.disease}
           onChange={this.handleDisease.bind(this)}
         />
-        <br/>
         <TextField
           style={fieldStyle}
           floatingLabelText="Tissue"
@@ -100,7 +124,6 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.tissue}
           onChange={this.handleTissue.bind(this)}
         />
-        <br/>
         <TextField
           style={fieldStyle}
           floatingLabelText="Rights Holder"
@@ -108,7 +131,6 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.rightsHolder}
           onChange={this.handleRightsHolder.bind(this)}
         />
-        <br/>
         <TextField
           style={fieldStyle}
           floatingLabelText="Rights"
@@ -116,20 +138,18 @@ export default class PropertiesEditor extends React.Component {
           value={this.props.rights}
           onChange={this.handleRights.bind(this)}
         />
-        <Paper style={{ marginLeft: '30px', marginTop: '20px', width: '85%' }} zDepth={2}>
-          <Toolbar>
-            <ToolbarGroup firstChild={true}>
-              <ToolbarTitle text="Reference"/>
-            </ToolbarGroup>
-          </Toolbar>
-          <textarea
-            style={areaStyle}
-            placeholder="Enter Reference..."
-            value={this.props.reference}
-            onChange={this.handleReference.bind(this)}
-          />
-        </Paper>
-        <br/>
+
+        <div style={refStyle}>
+
+            <div style={titleStyle}>Reference</div>
+
+            <textarea
+              style={areaStyle}
+              placeholder="Enter reference here..."
+              value={this.props.reference}
+              onChange={this.handleReference.bind(this)}
+            />
+        </div>
       </div>
     )
   }

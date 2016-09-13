@@ -59,16 +59,29 @@ export default class NDExSave extends React.Component {
 
   render() {
     const theme = getMuiTheme(this.props.theme)
+
     const container = {
-      height: '1065px'
+      margin: '0',
+      padding: '0',
+      width: '100%',
     }
+
+    const flexContainer = {
+      margin: '0',
+      padding: '0',
+      display: 'flex',
+      width: '100%',
+      height: '500px',
+    }
+
     return (
       <MuiThemeProvider muiTheme={theme}>
-        <div>
+        <div style={container}>
           <SaveBar
             save={this.save.bind(this)}
             UUID={this.props.UUID}
           />
+
           <NameEditBar
             networkName={this.state.networkName}
             overwrite={this.state.overwrite}
@@ -77,7 +90,8 @@ export default class NDExSave extends React.Component {
             privateDisabled={this.props.privateDisabled}
             updateField={this.updateField.bind(this)}
           />
-          <div style={container}>
+
+          <div style={flexContainer}>
             <PropertiesEditor
               reference={this.state.reference}
               author={this.state.author}
@@ -88,6 +102,7 @@ export default class NDExSave extends React.Component {
               rights={this.state.rights}
               updateField={this.updateField.bind(this)}
             />
+
             <DescriptionEditor
               description={this.state.description}
               updateField={this.updateField.bind(this)}
